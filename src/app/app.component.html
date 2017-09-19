@@ -1,3 +1,25 @@
-<h1>
-  {{title}}
-</h1>
+<h1>Registration Form</h1>
+<form [formGroup]="myForm">
+    <label>User Name:</label>
+        <input formControlName="userName" type="text"><br>
+            <div *ngIf="!myForm.controls.userName.valid && (myForm.controls.userName.dirty || submitAttempt)">
+                <p>Please fill in your username.</p>
+            </div>
+    <label>First Name:</label>
+        <input formControlName="firstName" type="text"><br>
+    <label>Last Name:</label>
+        <input formControlName="lastName" type="text"><br>
+    <label>Age:</label>
+        <input formControlName="userName" type="number"><br>
+            <div *ngIf="!myForm.controls.age.valid && (myForm.controls.age.dirty || submitAttempt)">
+                <p>Please enter an appropriate age.</p>
+            </div>
+    <label>Email:</label>
+        <input formControlName="userName" type="email"><br>
+    <label>Password:</label>
+        <input formControlName="userName" type="password"><br>
+</form>
+
+<button type="button" (click)="submit()">Submit</button>
+
+
