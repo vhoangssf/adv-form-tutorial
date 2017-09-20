@@ -7,17 +7,29 @@
             </div>
     <label>First Name:</label>
         <input formControlName="firstName" type="text"><br>
+            <div *ngIf="!myForm.controls.firstName.valid && (myForm.controls.firstName.dirty || submitAttempt)">
+                <p>Please enter a valid name.</p>
+            </div>
     <label>Last Name:</label>
         <input formControlName="lastName" type="text"><br>
+            <div *ngIf="!myForm.controls.lastName.valid && (myForm.controls.lastName.dirty || submitAttempt)">
+                <p>Please enter a valid name.</p>
+            </div>
     <label>Age:</label>
-        <input formControlName="userName" type="number"><br>
+        <input formControlName="age" type="number"><br>
             <div *ngIf="!myForm.controls.age.valid && (myForm.controls.age.dirty || submitAttempt)">
                 <p>Please enter an appropriate age.</p>
             </div>
     <label>Email:</label>
-        <input formControlName="userName" type="email"><br>
+        <input formControlName="email" type="email"><br>
+            <div *ngIf="!myForm.controls.email.valid && (myForm.controls.email.dirty || submitAttempt)">
+                <p>Please enter a valid email.</p>
+            </div>
     <label>Password:</label>
-        <input formControlName="userName" type="password"><br>
+        <input formControlName="password" type="password"><br>
+            <div *ngIf="!myForm.controls.password.valid && (myForm.controls.password.dirty || submitAttempt)">
+                <p>Please enter a password.</p>
+            </div>
 </form>
 
 <button type="button" (click)="submit()">Submit</button>

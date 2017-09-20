@@ -20,8 +20,8 @@ export class AppComponent {
         age: ['', AgeValidator.isValid],
         email: ['',
           Validators.compose([
-            Validators.required, 
-            Validators.pattern('^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$')]
+            Validators.pattern('^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$'),
+            Validators.required]
           )],
         password: ['', Validators.required]
     });
@@ -30,10 +30,10 @@ export class AppComponent {
   submit() {
     this.submitAttempt = true;
     if(!this.myForm.valid) {
-      console.log("Unsuccessful registration :(");
+      return console.log("Unsuccessful registration :(");
     } else {
       alert('Thank you for registering!');
-      console.log("Successful registration!", this.myForm.value);
+      return console.log("Successful registration!", this.myForm.value);
     }
   }
   
